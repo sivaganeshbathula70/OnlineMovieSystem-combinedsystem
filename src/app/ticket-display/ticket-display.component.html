@@ -1,0 +1,115 @@
+
+  <div class="container" >
+    <div class="row">
+      <div class="col-lg-12 col-md-12"><br><br><br>
+        <h2>Welcome view Your Tickets</h2><br><br>
+        <div class="heading"><button class="btn btn-success"(click)="viewTickets()">view ALL</button>&nbsp;<button (click)="cancelTickets()"class="btn btn-success">cancelTickets</button>&nbsp;
+          <button (click)="todayTickets()" class="btn btn-success">Today Ticket</button>&nbsp;<button (click)="completedTickets()"class="btn btn-success"> History</button></div>
+      </div>
+    </div>
+  <div class="container" *ngIf="!view">
+    <div class="row">
+      <div class="col-lg-12 col-md-12">
+        <div class="heading">View All</div>
+      </div>
+    </div>
+    <div class="row" *ngFor="let ticket of viewTicket" >
+      <div class="col-lg-12 col-md-12">
+        <div class="body" style="word-wrap: break-word;"><p > Ticket Id:   <strong>{{ticket.ticketId}}</strong><br>
+          Booking Date :<strong>{{ticket.booking.bookingDate}}</strong><br>
+          NoOfSeats:<strong>{{ticket.noOfSeats}}</strong><br>
+          Show Date:<strong>{{ticket.booking.ticketsBookedDate}}</strong><br>
+          <!--toatlCost<strong>{{ticket.booking.totalCost}}</strong><br><br>-->
+          Movie Details:<br>
+          showType:<strong>{{ticket.booking.show.showName}}</strong><br>
+          showstartTime:<strong>{{ticket.booking.show.showstartTime}}</strong><br>
+         movieId: <strong>{{ticket.booking.movie.movieId}}</strong><br>
+          movieName:<strong>{{ticket.booking.movie.movieName}}</strong><br>
+        <!--<strong>{{ticket.booking.movie.}}</strong>-->
+        movielanguage:<strong>{{ticket.booking.movie.language}}</strong><br>
+        genre:<strong>{{ticket.booking.movie.genre}}</strong><br>
+        TotalCost:<strong>{{ticket.booking.totalCost}}</strong>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>{{ticket.booking.show.theater.movie.language}}&nbsp;
+            {{ticket.booking.show.theater.movie.genre}}</strong><br>
+         <!--Theater Details: <strong>{{ticket.booking.show.theater.theaterName}}</strong>  -->
+        </p></div> 
+      </div>
+        
+    </div>
+    </div>
+    <div class="container" *ngIf="!cancel">
+      <div class="row">
+        <div class="col-lg-12 col-md-12">
+          <div class="heading">View All</div>
+        </div>
+      </div>
+      <div class="row" *ngFor="let ticket of viewTicket" >
+        <div class="col-lg-12 col-md-12">
+          <div class="body" style="word-wrap: break-word;"><p > Ticket Id:   <strong>{{ticket.ticketId}}</strong><br>
+            Booking Date :<strong>{{ticket.booking.bookingDate}}</strong><br>
+            NoOfSeats:<strong>{{ticket.noOfSeats}}</strong><br>
+            Show Date:<strong>{{ticket.booking.ticketsBookedDate}}</strong><br>
+            Movie Details:<br>
+            <strong>{{ticket.booking.movie.movieName}}</strong><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>{{ticket.booking.show.movie.language}}&nbsp;
+              {{ticket.booking.movie.genre}}</strong><br>
+            <button class="btn btn-danger" style="height: 1cm;float:right" (click)="cancelTicket(ticket.ticketId)">Cancel Ticket</button>
+          </p></div> 
+        </div>
+          
+      </div>
+      </div>
+      <div class="container" *ngIf="!today">
+        <div class="row">
+          <div class="col-lg-12 col-md-12">
+            <div class="heading">View All</div>
+          </div>
+        </div>
+        <div class="row" *ngFor="let ticket of viewTicket" >
+          <div class="col-lg-12 col-md-12">
+            <div class="body" style="word-wrap: break-word;"><p > Ticket Id:   <strong>{{ticket.ticketId}}</strong><br>
+              Booking Date :<strong>{{ticket.booking.bookingDate}}</strong><br>
+              NoOfSeats:<strong>{{ticket.noOfSeats}}</strong><br>
+              Show Date:<strong>{{ticket.booking.ticketsBookedDate}}</strong><br>
+              
+              movieName:<strong>{{ticket.booking.movie.movieName}}</strong><br>
+              moviestartDate:<strong>{{ticket.booking.show.showstartTime}}</strong>
+              Total cost<strong>{{ticket.booking.totalCost}}</strong><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>{{ticket.booking.movie.language}}&nbsp;
+                {{ticket.booking.movie.genre}}</strong><br>
+             <!-- Theater Details: <strong>{{ticket.booking.show.theater.theaterName}}</strong>  -->
+            </p></div> 
+          </div>
+            
+        </div>
+        </div>
+        <div class="container" *ngIf="!completed">
+          <div class="row">
+            <div class="col-lg-12 col-md-12">
+              <div class="heading">View All</div>
+            </div>
+          </div>
+          <div class="row" *ngFor="let ticket of viewTicket" >
+            <div class="col-lg-12 col-md-12">
+              <div class="body" style="word-wrap: break-word;"><p > Ticket Id:   <strong>{{ticket.ticketId}}</strong><br>
+                Booking Date :<strong>{{ticket.booking.bookingDate}}</strong><br>
+                NoOfSeats:<strong>{{ticket.noOfSeats}}</strong><br>
+                Show Date:<strong>{{ticket.booking.ticketsBookedDate}}</strong><br><br>
+               <strong> Movie Details:</strong><br> 
+                movieName:<strong>{{ticket.booking.movie.movieName}}</strong><br>
+                language<strong>{{ticket.booking.movie.language}}</strong><br>
+                  Genre:<strong>{{ticket.booking.movie.genre}}</strong><br>
+              
+                <br>&nbsp;
+
+            
+              </p></div> 
+            </div>
+              
+          </div>
+          </div>
+    
+      

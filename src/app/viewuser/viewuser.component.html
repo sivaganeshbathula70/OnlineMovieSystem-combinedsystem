@@ -1,0 +1,24 @@
+<table class="table table-primary table-striped table-hover col-md-8 mx-auto mt-3">
+  <tr>
+    <th>screeinId</th>
+    <th>Theatername</th>
+    <th>screenname</th>
+    <th>show</th>
+    <th>screenrows</th>
+    <th>Screencolumns</th>
+    <th > Action</th>
+  </tr>
+  <tr *ngFor="let user of users">
+  <td>{{user.screeinId}}</td>
+  <td>{{user.theatername}}</td>
+  <td>{{user.screenname}}</td>
+  <td>{{user.show}}</td>
+  <td>{{user.screenrows}}</td>
+  <td>{{user.columns}}</td>
+  <td>
+    <button class="btn btn-outline-danger" (click)="deletescreen(user.screeinId)">Delete</button>
+    &nbsp;&nbsp;
+    
+    
+</td>
+</table>

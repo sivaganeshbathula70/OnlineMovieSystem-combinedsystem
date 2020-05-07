@@ -1,0 +1,83 @@
+<div class="container">
+    <h1>User screen Form</h1>
+    <form (ngSubmit)="insertUser()" #heroForm="ngForm">
+
+      <div class="form-group">
+        <label for="screeinId">screeinId</label>
+        <input type="number" class="form-control" id="screeinId"
+               required
+               [(ngModel)]="users.screeinId" name="screeinId"
+               #screeinId="ngModel">
+        <div [hidden]="screeinId.valid || screeinId.pristine"
+             class="alert alert-danger">
+          screen Id is mandatory.
+        </div>
+      </div>
+
+
+
+      <div class="form-group">
+        <label for="theatername">Theatername</label>
+        <input type="text" class="form-control" id="theatername"
+               required
+               [(ngModel)]="users.theatername"   pattern ="[A-Za-z]*" name="theatername"
+               #pass="ngModel">
+        <div [hidden]="pass.valid || pass.pristine"
+             class="alert alert-danger">
+          Theater Name is Mandatory and should contain only chracters;
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="screenname">screenname</label>
+        <input type="text" class="form-control" id="screenname"
+               required
+               [(ngModel)]="users.screenname" pattern ="[A-Za-z]*" name="screenname"
+               #screenname="ngModel">
+        <div [hidden]="screenname.valid || screenname.pristine"
+             class="alert alert-danger">
+        Screen name  should contain only chracters.
+        </div>
+      </div>
+  
+   
+
+      <div class="form-group">
+        <label for="show">U show</label>
+        <input type = "text" class="form-control" id="show"
+                required
+                [(ngModel)]="users.show"  pattern = "[A-Za-z]*" name="show"
+                #show="ngModel">
+        <div [hidden]="show.valid || show.pristine" class="alert alert-danger">
+          show  is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="screenrows">screenrows</label>
+        <input type="number" class="form-control" id="screenrows"
+               required
+               [(ngModel)]="users.screenrows" name="screenrows"
+               #screenrows="ngModel">
+        <div [hidden]="screenrows.valid || screenrows.pristine"
+             class="alert alert-danger">
+          screen rows is Required
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="columns">columns</label>
+        <input type="number" class="form-control" id="columns"
+               required
+               [(ngModel)]="users.columns" name="columns"
+               #columns="ngModel">
+        <div [hidden]="columns.valid || columns.pristine"
+             class="alert alert-danger">
+        screen columns  is Required
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid">Submit</button>
+      
+    </form>
+
+
+</div>

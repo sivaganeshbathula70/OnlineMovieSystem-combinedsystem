@@ -1,0 +1,42 @@
+
+<section class="col-md-10 mx-auto mt-4">
+    <div class="alert alert-success" *ngIf="info !=undefined">{{info}}</div>
+    <div class="alert alert-danger" *ngIf="errorInfo != undefined">{{errorInfo}}</div>
+    <form #frm="ngForm" (ngSubmit)="updateUser()">
+      
+      <div class="mt-3">Screen Id</div>
+      <div><input type="number" name="screeinId" [(ngModel)]="uservalue.screeinId" class="form-control" #screeinId="ngModel"
+          required /></div>
+      <div class="alert alert-dark mt-3" *ngIf="screeinId.invalid && (screeinId.touched || screeinId.dirty)">Screen Id  is
+        required.</div>
+  
+      <div class="mt-3">Theater Name</div>
+      <div><input type="text" name="screenname" [(ngModel)]="uservalue.screenname" pattern ="[A-Za-z]*" name="screenname" class="form-control" #screenname="ngModel"
+          required /></div>
+      <div class="alert alert-dark mt-3" *ngIf="screenname.invalid && (screenname.touched || screenname.dirty)">Theater  Name is
+        required and should have only alphabets.</div>
+  
+      <div class="mt-3">show</div>
+      <div><input type="text" name="show" [(ngModel)]="uservalue.show"  pattern= "[A-Za-z]*"class="form-control" #show="ngModel"
+          required /></div>
+      <div class="alert alert-dark mt-3" *ngIf="show.invalid && (show.touched || show.dirty)">show  should contain only alphabets</div>
+  
+      <div class="mt-3">screen Name</div>
+      <div><input type="text" name="theatername" [(ngModel)]="uservalue.theatername" pattern="[A-Za-z]*"class="form-control" #theatername="ngModel"
+          required /></div>
+      <div class="alert alert-dark mt-3" *ngIf="theatername.invalid && (theatername.touched || theatername.dirty)">screenname 
+       is required and should contain only albhets</div>
+       <div class="mt-3">Screen rows</div>
+       <div><input type="number" name="screenrows" [(ngModel)]="uservalue.screenrows" class="form-control" #screenrows="ngModel"
+        required /></div>
+    <div class="alert alert-dark mt-3" *ngIf="screenrows.invalid && (screenrows.touched || screenrows.dirty)">Screen rows is
+      required.</div>
+      <div class="mt-3">Screen columns</div>
+      <div><input type="number" name="columns" [(ngModel)]="uservalue.columns" class="form-control" #columns="ngModel"
+        required /></div>
+    <div class="alert alert-dark mt-3" *ngIf="columns.invalid && (columns.touched || columns.dirty)">columns  is
+      required.</div>
+      <div class="mt-3"><input type="submit" [disabled]="!frm.valid" class="btn btn-dark" /></div>
+    </form>
+  </section>
+  
